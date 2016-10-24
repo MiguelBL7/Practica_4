@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+
+	<head>
+		<meta content="text/html; charset=UTF-8" http-equiv="content-type">
+		<title>Pr&aacute;ctica 4 - Restaurante Alcal&aacute;</title>
+		
+		<!-- Libreria JQuery 3.1.1 (desde google) -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		
+		<!-- Funciones -->
+		<script src="restaurante.js"></script>
+	</head> 
+	
+	<body bgcolor = "#99ff66">
+		<!-- Diseño gráfico de la interfaz realizado utilizando divisiones <div> </div> -->
+		<form>
+			<h1>Restaurante Alcal&aacute;</h1>
+		
+			<!-- División 1: Columna de la izquierda -->
+			<div style="position: static; padding: 10px; width: 230px;">
+				<!-- RadioButton para elegir que platos se quieren mostrar -->
+				<input type="radio" name="plato" id="platos1" value="plato1" checked> Primeros platos<br>
+				<input type="radio" name="plato" id="platos2" value="plato2"> Segundos platos<br>
+				<input type="radio" name="plato" id="lPostres" value="postre"> Postres<br><br>
+			
+				<!-- Caja de selección para elegir los primeros donde su atributo value guarda su precio -->
+				<select id="primerosPlatos" size="7" style="width: 210px;">
+					<option value="6">Sopa de cocido</option>
+					<option value="6">Sopa de ajo</option>
+					<option value="8">Lentejas</option>
+					<option value="5">Entremeses</option>
+					<option value="4">Ensalada mixta</option>
+					<option value="4">Croquetas de jam&oacute;n</option>
+					<option value="3">Macarrones</option>
+				</select>
+				<!-- Caja de selección para elegir los segundos donde su atributo value guarda su precio -->
+				<select id="segundosPlatos" size="7" style="width: 210px;">
+					<option value="5">Revuelto de setas</option>
+					<option value="10">Entrecot de ternera</option>
+					<option value="7">Pechuga de pollo</option>
+					<option value="8">Filete de lomo</option>
+					<option value="7">Lenguado rebozado</option>
+					<option value="8">Filete de merluza</option>
+					<option value="5">Salm&oacute;n a la plancha</option>
+				</select>
+				<!-- Caja de selección para elegir los postres donde su atributo value guarda su precio -->
+				<select id="listaPostres" size="7" style="width: 210px;">
+					<option value="4">Arroz con leche</option>
+					<option value="4">Natillas</option>
+					<option value="3">Pudding</option>
+					<option value="3">Mousse de chocolate</option>
+					<option value="2">Helado</option>
+					<option value="3">Tarta del d&iacute;a</option>
+					<option value="1">Fruta</option>
+				</select>
+			</div>
+			
+			<!-- División 2: Columna de la derecha -->
+			<div style="position: absolute; padding: 10px; width: 220px; top: 70px; left: 260px;">
+				<br>
+				<!-- Caja de selección para elegir los primeros donde su atributo value guarda índice del array -->
+				<select id="mesas">
+					<option value=0 selected>Mesa 1</option>
+					<option value=1>Mesa 2</option>
+					<option value=2>Mesa 3</option>
+					<option value=3>Mesa 4</option>
+					<option value=4>Mesa 5</option>
+				</select>
+				<br><br><br>
+				<!-- Caja de selección donde se muestra la lista de platos elegidos por una mesa -->
+				<select id="listaElegidos" size="7" style="width: 200px;"></select>
+				<br><br>
+				<!-- Checkbox para selección del café y de la copa -->
+				<input type="checkbox" id="cafe" value="Cafe"> con caf&eacute;<br>
+				<input type="checkbox" id="copa" value="Copa"> con copa<br><br>
+				<br><br>
+				<!-- Para evitar que envie los datos cuando se pulsa el botón, 
+					se ha añadido para el método onClick: " onclick="return false" " -->
+				<button id="btnPagar" onclick="return false">Pagado</button>
+			</div>
+			
+			<!-- División 3: Contiena la caja de texto donde se muestra el precio total. -->
+			<div style="position: absolute; top: 340px; left: 230px;">
+				Total: <input type="text" id="total" style="text-align:right;" value=0 disabled> &euro;
+			</div>
+		</form>
+	</body>
+</html>
